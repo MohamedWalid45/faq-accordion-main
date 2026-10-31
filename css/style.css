@@ -1,0 +1,136 @@
+:root {
+    --White: oklab(100% 0 -0.00011);
+    --Purple100: hsl(275, 100%, 97%);
+    --Purple600: rgb(140, 105, 145);
+    --Purple950: hsl(292, 42%, 14%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Work Sans", system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--Purple100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    background: url("../assets/images/background-pattern-desktop.svg");
+    z-index: -1;
+}
+
+.card {
+    width: 600px;
+    height: auto;
+    border-radius: 16px;
+    padding: 40px;
+    background-color: var(--White);
+    box-shadow: 0 40px 20px  rgb(140, 105, 145,0.1);
+}
+.card .head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.card .head img {
+    width: 38px;
+    margin-right: 24px;
+}
+.card .head h2 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.contant .quiz .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contant .quiz {
+    margin: 20px 0;
+}
+.contant .quiz .question h3 {
+
+    font-size: 18px;
+    color: var(--Purple950);
+    font-weight: 600;
+    cursor: pointer;
+}
+.contant .quiz .question h3:hover {
+    color: purple;
+}
+.contant .quiz .question .image {
+    border-radius: 50%;
+}
+.contant .quiz .question .image button {
+    border: none;
+    border-radius: 50%;
+    max-width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+hr {
+    height: 1px;
+    color:rgba(47, 21, 51, 0.1) ;
+}
+.contant .quiz .text p {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--Purple600);
+}
+.contant .quiz .text {
+    margin-top: 24px;
+    transition: 9s;
+}
+
+.hidden {
+    display: none;
+}
+
+.attribution { 
+    position: absolute;
+    font-size: 0.6875rem; 
+    text-align: center; 
+    top:90%;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width:720px) {
+    body::before {
+        height: 232px;
+    }
+    .card {
+        width:327px;
+        padding:24px;
+        margin: 0 24px;
+    }
+    .card .head h2 {
+    font-size:32px;
+    }
+    .contant .quiz .question h3 {
+        font-size:16px;
+    }
+    .contant .quiz .question .image {
+        width: 24px;
+    }
+    .contant .quiz .text p {
+    font-size: 14px;
+    line-height: 21px; 
+    }
+
+}
